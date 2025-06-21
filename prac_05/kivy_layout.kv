@@ -1,0 +1,40 @@
+#:kivy 2.0.0
+
+<MainLayout>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    # 用于显示状态文本的标签
+    Label:
+        id: status_label
+        text: "Initial Status"
+        font_size: 20
+        size_hint_y: 0.2  # 占垂直空间的 20%
+
+    # 包含增减按钮的水平布局
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 10
+        size_hint_y: 0.7  # 按钮区域占 70%
+
+        Button:
+            text: "Decrement"
+            on_press: root.handle_press(-1)
+
+        Button:
+            text: "Increment"
+            on_press: root.handle_press(1)
+
+    # 可用于后续添加其他内容的垂直布局（这里先留空演示）
+    BoxLayout:
+        id: names_box
+        orientation: 'vertical'
+        spacing: 5
+        size_hint_y: 0.1  # 该区域占 10%
+
+    # 显示自定义文本的标签
+    Label:
+        text: "I did this :)"
+        font_size: 16
+        size_hint_y: 0.1  # 调整标签大小为 10%
